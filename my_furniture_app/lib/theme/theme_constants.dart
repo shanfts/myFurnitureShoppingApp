@@ -29,19 +29,22 @@ class MyThemes {
               ))),
       brightness: Brightness.dark);
   //* Dark theme stayling area Ended
+
   //* Light theme stayling area started
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: scafoldClr,
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-      textStyle: GoogleFonts.gelasio(
+      textStyle: GoogleFonts.nunitoSans(
         fontSize: 16,
         color: Colors.white,
       ),
       backgroundColor: darkGrayClr,
     )),
     textTheme: TextTheme(
+      labelLarge: GoogleFonts.nunitoSans(color: darkGrayClr),
+      labelMedium: GoogleFonts.nunitoSans(color: mediumGrayColor),
       bodyLarge: GoogleFonts.margarine(color: Colors.black),
       headlineSmall: GoogleFonts.gelasio(color: lightGrayClr),
       headlineMedium: GoogleFonts.gelasio(color: darkGrayClr),
