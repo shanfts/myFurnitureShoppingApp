@@ -1,4 +1,5 @@
 import 'package:my_furniture_app/constants/packageImport.dart';
+import 'package:my_furniture_app/views/Login%20page/login_page.dart';
 
 class SignupPageScreen extends StatelessWidget {
   const SignupPageScreen({super.key});
@@ -152,7 +153,9 @@ class SignupPageScreen extends StatelessWidget {
                             style: Theme.of(context).textTheme.labelMedium,
                           ),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(() => const LoginPage());
+                              },
                               child: Text(
                                 'SIGN IN',
                                 style: Theme.of(context)

@@ -1,12 +1,18 @@
 import 'package:my_furniture_app/constants/packageImport.dart';
 
-class ThemeProvider extends ChangeNotifier {
-  ThemeMode themeMode = ThemeMode.system;
-  bool get isDarkMode => themeMode == ThemeMode.dark;
+class ThemeController extends GetxController {
+  final ThemeData lightTheme = MyThemes.lightTheme;
+  final ThemeData darkTheme = MyThemes.darkTheme;
 
-  void toggleTheme(bool isOn) {
-    themeMode = isOn ? ThemeMode.dark : ThemeMode.light;
-    notifyListeners();
+  Rx<ThemeData> currentTheme = MyThemes.lightTheme.obs;
+
+  void toggleTheme() {
+    if (currentTheme.value == lightTheme) {
+      currentTheme.value = darkTheme;
+    } else {
+      currentTheme.value = lightTheme;
+    }
+    Get.changeThemeMode(Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
   }
 }
 
